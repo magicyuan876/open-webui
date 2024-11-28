@@ -282,28 +282,6 @@
 													? $i18n.t('Create Admin Account')
 													: $i18n.t('Create Account')}
 										</button>
-
-										{#if $config?.features.enable_signup && !($config?.onboarding ?? false)}
-											<div class=" mt-4 text-sm text-center">
-												{mode === 'signin'
-													? $i18n.t("Don't have an account?")
-													: $i18n.t('Already have an account?')}
-
-												<button
-													class=" font-medium underline"
-													type="button"
-													on:click={() => {
-														if (mode === 'signin') {
-															mode = 'signup';
-														} else {
-															mode = 'signin';
-														}
-													}}
-												>
-													{mode === 'signin' ? $i18n.t('Sign up') : $i18n.t('Sign in')}
-												</button>
-											</div>
-										{/if}
 									{/if}
 								{/if}
 							</div>
@@ -369,7 +347,7 @@
 												fill="#ffb900"
 											/>
 										</svg>
-										<span>{$i18n.t('Continue with {{provider}}', { provider: 'Microsoft' })}</span>
+										<span>GenScript SSO Login</span>
 									</button>
 								{/if}
 								{#if $config?.oauth?.providers?.oidc}
